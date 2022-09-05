@@ -1,0 +1,13 @@
+version: '3'
+services:
+  nttdata-reportes:
+    container_name: reportes-server
+    build: 
+      context: configDocker
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./configDocker/config:/tmp/config/:ro
+    ports:
+      - 8109:8184
+
